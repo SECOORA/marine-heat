@@ -40,14 +40,11 @@ for i, stat in stat_all.iterrows():
     mn = []
     wt = []
     
-    if stat["Reg"][0:2] != "44":
-        continue
-    
     # folder of files to open
     f_old = "Data/NDBC/L00D/" + str(stat["Reg"])
     
     # get list of files
-    file_all = [f for f in os.listdir(f_old)]
+    file_all = [f for f in os.listdir(f_old) if not f.startswith('._')]
     file_all = sorted(file_all)
     
     # loop through files
