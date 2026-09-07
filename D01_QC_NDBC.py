@@ -32,9 +32,6 @@ for i, stat in stat_all.iterrows():
     f_old = head + "L00N/"
     f_new = head + "QC/"
     
-    if stat["Reg"] != "44056":
-        continue
-    
     # create the folder only if necessary
     if not os.path.exists(f_new):
         os.makedirs(f_new) 
