@@ -566,7 +566,7 @@ for i, stat in stat_all.iterrows():
     s
     # save the dataset
     ncf = f_new + stat["Reg"] + ".nc"
-    ds.to_netcdf(path=ncf, mode="w")
+    ds.to_netcdf(path=ncf, mode="w", engine="netcdf4")
     
     e = time.time()
     print("Successfully saved " + str(stat["Reg"]) + 
